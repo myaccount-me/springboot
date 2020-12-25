@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+<!--  
+  <bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreResourceNotFound" value="true"></property>
+		<property name="ignoreUnresolvablePlaceholders" value="true"></property>
+		<property name="systemPropertiesMode" value="2"></property>
+		<property name="systemPropertiesModeName"
+			value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="searchSystemEnvironment" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:customer.properties</value>
+			</list>
+		</property>
+	</bean>  
+	
+-->
+	<!-- DATASOURCES BEGIN -->
+<!--  
+	<bean id="bscs_dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
+		primary="false">
+		<property name="driverClassName">
+			<value>${dataSource.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${dataSource.url}</value>
+		</property>
+		<property name="username">
+			<value>${dataSource.username}</value>
+		</property>
+		<property name="password">
+			<value>${dataSource.password}</value>
+		</property>
+
+		<property name="removeAbandoned">
+			<value type="boolean">${db.removeAbandoned}</value>
+		</property>
+		<property name="removeAbandonedTimeout">
+			<value>${db.removeAbandonedTimeout}</value>
+		</property>
+		<property name="logAbandoned">
+			<value>${db.logAbandoned}</value>
+		</property>
+		<property name="timeBetweenEvictionRunsMillis">
+			<value>${db.timeBetweenEvictionRunsMillis}</value>
+		</property>
+		<property name="minEvictableIdleTimeMillis">
+			<value>${db.minEvictableIdleTimeMillis}</value>
+		</property>
+		<property name="numTestsPerEvictionRun">
+			<value>${db.numTestsPerEvictionRun}</value>
+		</property>
+
+		<property name="validationQuery">
+			<value>${db.validationQuery}</value>
+		</property>
+		<property name="testWhileIdle">
+			<value>${db.testWhileIdle}</value>
+		</property>
+		<property name="testOnReturn">
+			<value>${db.testOnReturn}</value>
+		</property>
+		<property name="testOnBorrow">
+			<value>${db.testOnBorrow}</value>
+		</property>
+	</bean>
+
+
+-->
+
+	<!-- DATASOURCES END -->
+
+	<!-- SESSION FACTORIES -->
+
+  
+	<!-- 
+		<bean id="Dunning_SqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="bscs_dataSource" />
+		
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:customer_requests.xml</value>
+				 
+			</list>
+		</property>
+	</bean>
+	-->
+	</beans>

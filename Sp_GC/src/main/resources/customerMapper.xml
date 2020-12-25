@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.billcom.dao.CustomerDao">
+<resultMap  id="CustomerResult" type="com.billcom.model.Customers" >
+<result property="customer_ID" column="customer_ID"/> 
+<result property="first_name" column="first_name"/> 
+<result property="last_name" column="last_name"/> 
+<result property="mail" column="mail"/> 
+<result property="adress" column="adress"/> 
+<result property="cin" column="cin"/> 
+<result property="birthday" column="birthday"/>
+<result property="code" column="code"/>  
+ </resultMap>
+
+	<select id="getAll" resultMap="CustomerResult">
+		SELECT
+		customer_ID,
+		first_name,
+		last_name,
+		mail,
+		adress,
+		cin,
+		birthday,
+		code
+		FROM
+		customers ;
+
+	</select>
+	<select id="searchCustomer" resultMap="CustomerResult">
+		SELECT
+		customer_ID,
+		first_name,
+		last_name,
+		mail,
+		adress,
+		cin,
+		birthday,
+		code
+		FROM
+		customers
+		where 1=1
+		<if test="code != null">
+			and code = #{code} 
+			
+		</if>
+		<if test="Fname != null">
+			and first_name = #{Fname} 
+			
+		</if>
+			<if test="Lname != null">
+			and last_name = #{Lname} 
+			
+		</if>
+			<if test="cin != null">
+			and cin = #{cin} 
+			
+		</if>
+		;
+	</select>
+<insert id="CreateCustomer">
+INSERT INTO customers (customer_ID,first_name,last_name,mail,adress,cin,birthday,code) VALUES (null,#{c.first_name},#{c.last_name},#{c.mail},#{c.adress},#{c.cin},#{c.birthday},#{c.code});
+</insert>
+</mapper>
